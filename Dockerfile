@@ -31,13 +31,5 @@ RUN rm -rf /usr/share/nginx/html/*
 ## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
 COPY --from=builder /ng-app/dist /usr/share/nginx/html
 
-# Create symlinks && set permissions for non-root user
-RUN  useradd -u 1001 -r -g 0 -s /sbin/nologin default \
-    && chown -R 1001:0 /config \
-    && chmod -R g+rw /config \
-    || true
-
-USER 1001
-
 CMD ["nginx", "-g", "daemon off;"]
 
