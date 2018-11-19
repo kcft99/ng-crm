@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <div>
+    beer-list works!
+    <table class="ui celled table">
+      <tr *ngFor="let beer of beers">
+        <td> {{beer.name}}</td>
+        <td> {{beer.price | currency}}</td>
+
+      </tr>
+    </table>
+  </div>
+
+  <form [formGroup]="beerForm">
+
+    <select multiple id="orderBeerListId" formControlName="menuProductIds">
+
+      <option *ngFor="let beer of beers" value="{{beer.menuProductId}}">
+        {{beer.name}}
+        {{beer.price | currency}}
+      </option>
+
+    </select>
+
+    <input id="beerNameId" type="hidden" formControlName="menuProductName" [value]="beerName" />
+    <button type="button" class="ui button" (click)="orderBeer()">Place Order</button>
+    <pre>{{beerForm }}</pre>
+  </form>
+
+
+</body>
+
+</html>

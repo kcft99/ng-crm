@@ -1,0 +1,14 @@
+<p>
+  pizza-list works!
+
+</p>
+<form #f="ngForm" (ngSubmit)="f.form.valid && addOrder()">
+  <div class="form-group">
+    <div class="form-control">
+      <input type="text" name="input1" [(ngModel)]="model.menuProductId" required />
+    </div>
+    <p></p>
+
+    <button type="submit" class="ui button2" [disabled]="!f.form.valid">Place Order</button>
+  </div>
+</form>
