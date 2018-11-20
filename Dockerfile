@@ -33,7 +33,9 @@ COPY --from=builder /ng-app/dist /usr/share/nginx/html
 
 # Create symlinks && set permissions for non-root user
 RUN  useradd -u 1001 -r -g 0 -s /sbin/nologin default \
-     || true
+    && chown -R 1001:0 /var/run \
+    && chmod -R g+rw /var/run \
+    || true
 
 USER 1001
 
