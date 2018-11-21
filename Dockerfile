@@ -49,4 +49,5 @@ RUN addgroup nginx root
 USER nginx
 
 #CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT /bin/bash
 
