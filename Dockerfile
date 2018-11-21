@@ -48,9 +48,7 @@ RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 RUN addgroup nginx root
 
 #Add bash
-apk update
-apk upgrade
-apk add bash
+RUN apk update && apk upgrade && add bash
 
 USER nginx
 
