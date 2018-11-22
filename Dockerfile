@@ -50,7 +50,7 @@ RUN addgroup nginx root
 #Add bash
 RUN apk update && apk upgrade && apk add bash
 
-#USER nginx
+USER nginx
 
 #CMD ["nginx", "-g", "daemon off;"]
 #ENTRYPOINT /bin/bash
