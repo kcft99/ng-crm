@@ -53,6 +53,6 @@ RUN apk update && apk upgrade && apk add bash
 
 USER nginx
 
-#CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
 #ENTRYPOINT /bin/bash
 
