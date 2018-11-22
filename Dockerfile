@@ -23,7 +23,7 @@ RUN $(npm bin)/ng build --prod
 
 FROM nginx:1.13.3-alpine
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY dist /usr/share/nginx/html
 
 RUN chmod -R 777 /var/log/nginx /var/cache/nginx /var/run \
